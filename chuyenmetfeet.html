@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="chuyendoi">
+        <input type="text" name="text" id="num">
+        <input type="button" value="footToMeter" onclick="changeFeet()">
+        <input type="button" value=" meterToFoot" onclick="changeMeter()">
+    </form>
+    <div id="result"> result: </div>
+    <script>
+        function changeFeet() {
+           let a = 0.305 * document.getElementById('num').value
+           document.getElementById('result').innerHTML = a + 'meter'
+        }
+        function changeMeter() {
+            let b = 3.279 * document.getElementById('num').value
+            document.getElementById('result').innerHTML = b + 'feet'
+
+        }
+    </script>
+</body>
+</html>
