@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function processconfirm(answer) {
+            let result
+            if(answer){
+                result = 'excellent. we will play a nice chess'                
+            }else{
+                result = 'maybe lay then'
+            }
+            return result
+        }
+        let confirmAnswer = confirm ('shall we play agame')
+        let theAnswer = processconfirm (confirmAnswer)
+        alert(theAnswer)
+    </script>
+</body>
+</html>
