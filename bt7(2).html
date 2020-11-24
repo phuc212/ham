@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a
+        let b
+        do {
+            a =+ prompt('nhap num1')
+         }
+            while(isNaN(a))
+            do {
+            b =+ prompt('nhap num1')
+         }
+            while(isNaN(b))
+        function doiSo() {
+            a = b
+            b = a
+        }
+        alert('a la ' +b)
+        alert('b la' +a)
+    </script>
+</body>
+</html>

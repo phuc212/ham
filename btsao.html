@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        ADD NEW PRODUCT <br>
+        <input type="text" id="txt" >
+        <input type="button" id="add" value="Add" onclick="AddProductName()">
+    </form>
+    DISPLAY ALL PRODUCT <br>
+     
+    <table >
+        <thead>
+            <tr>
+                <th>Product name</th>
+            </tr>
+        </thead>
+        <tbody id='disPlay'>
+
+        </tbody>
+    </table>
+    <script>
+        let arr =[];
+        function AddProductName() {
+           //r = document.getElementById('txt').value
+            arr.push(document.getElementById('txt').value);
+            DisplayProduct(arr);
+        }
+
+        function DisplayProduct(ar1) {
+            let getDisplay = document.getElementById('disPlay');
+            getDisplay.innerHTML = "";
+            for(let i=0; i< ar1.length; i++){
+               getDisplay.innerHTML += `
+               <tr>
+               <td id="name_${i}">${ar1[i]}</td>
+               <td><input type="button" id="edit" value='edit' onclick='editName(${i})'> </td>
+               <td><input type="button" id="delete" value='delete' onclick='deleteName(${i})' ></td>
+               </tr>`;
+            }
+        }
+        function editName(index) {
+            let edit = prompt('');
+            arr[index] = edit ;
+            document.getElementById(`name_${index}`).innerHTML = arr[index]
+        }
+        function deleteName(index) {
+            arr.splice(index,1);
+            DisplayProduct(arr);
+        }
+    </script>
+</body>
+</html>
